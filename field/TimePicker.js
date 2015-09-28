@@ -53,11 +53,11 @@ Ext.define( 'Ext.ux.field.TimePicker', {
         // if we have no value whatsoever, set a default
         if ( !Ext.isDate( value ) && !Ext.isObject( value ) ) {
             var defaultTime = this.getDefaultTime().split( ':' );
-            return new Date( date.getYear(), date.getMonth(), date.getDate(), defaultTime[ 0 ], defaultTime[ 1 ] );
+            return new Date( date.getFullYear(), date.getMonth(), date.getDate(), defaultTime[ 0 ], defaultTime[ 1 ] );
         }
         // if the value is an object, create a new date with time values based on object
         if ( Ext.isObject( value ) ) {         
-            return new Date( date.getYear(), date.getMonth(), date.getDate(), value.hour, value.minute );
+            return new Date( date.getFullYear(), date.getMonth(), date.getDate(), value.hour, value.minute );
         }
         return value;
     },
